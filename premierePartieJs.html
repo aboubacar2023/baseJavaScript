@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Bases</title>
+    <script>
+
+        // Exercice 3: trouver le nombre de lettre dans une phrase et afficher les top 3
+        function nombreCaractere(mot){
+            let lettre = mot.toLowerCase()
+                            .replaceAll(" ","")
+                            .replaceAll(",","")
+                            .replaceAll("!","")
+                            .split('')
+            let data = {}
+            for(let i = 0; i < lettre.length; i++){
+                data[lettre[i]] = 0
+                for(let j = 0; j < lettre.length; j++){
+                    if(lettre[i] === lettre[j]){
+                        data[lettre[i]]++
+                    }
+                }
+            }
+            return data
+        }
+
+        const phrase = "Bane, est trop Top!!!"
+        const data = nombreCaractere(phrase)
+        // insertion des objets dans un tableau pour les classer par ordre
+        const orderData = []
+        for(let k in data){
+            orderData.push({
+                lettre: k,
+                nombre: data[k]
+            })
+        }
+
+        //classement des datas par nombre d'occurence
+        orderData.sort(
+            (a,b) => b.nombre - a.nombre
+            )
+
+        //affichage de Top 3
+
+        for(let i = 0; i < 3; i++){
+            console.log(i+1,":"," le mot",orderData[i].lettre, orderData[i].nombre, "fois")
+        }
+
+        //Exercice 2 : calculer la moyenne des etudiants et afficher les tops 3
+
+        const students = [
+            {
+                name: 'John', 
+                notes: [1, 20, 20, 19, 12]
+            },
+            {
+                name: 'Bane', 
+                notes: [18, 2, 10, 19, 12]
+            },
+            {
+                name: 'Ousmane', 
+                notes: [10, 20, 19, 19, 6]
+            },
+            {
+                name: 'Alpha', 
+                notes: [9, 20, 8, 9, 12]
+            }
+        ]
+
+        
+        function moyenne(etud){
+            for(let item of etud){
+                let noteIndividuel = item.notes
+                let somme = 0 ;
+                for(let i = 0; i < noteIndividuel.length; i++){
+                    somme += noteIndividuel[i]
+                }
+                item.moyenne = somme/noteIndividuel.length
+                item.best = Math.max(...noteIndividuel)
+                item.worst = Math.min(...noteIndividuel)
+            }
+        }
+
+        moyenne(students)
+
+        function compare(a, b) {
+            return b.moyenne - a.moyenne
+        }
+
+        console.log('Les trois premiers sont :')
+        for(let i = 0; i < 3; i++){
+            console.log(i+1,":", students[i].name, "a eu", students[i].moyenne, "de moyenne.", "Sa meilleur note est:",students[i].best, "Et sa mauvaise note est:",students[i].worst )
+        }
+
+        // Exercice 1 : Savoir si un mot est un palindrome palindrome
+         function isPalindrome(string){
+            string = string.toLowerCase().split('')
+            let inverse = string.reverse().join('')
+            string = string.join('')
+            if(string !== inverse){
+                return false
+            }
+            return true
+        }
+        const words = {
+            kayak: true,
+            SOS: true, 
+            Kayak: true,
+            Bonjour: false,
+        }
+        for(let word in words){
+            if(isPalindrome(word) !== words[word]){
+                console.log(word, "n'est pas un palindrome")
+            }else{
+                console.log(word, "est un palindrome")
+            }
+        } 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
