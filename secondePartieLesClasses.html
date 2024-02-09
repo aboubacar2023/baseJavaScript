@@ -4,6 +4,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les Classes</title>
+    <script>
+        
+        /* 
+        //TP gestion d'une libraire
+        class Book 
+        {
+            #page = 1
+            constructor(nom, nombre){
+                this.nom = nom
+                this.nombre = nombre
+            }
+
+            get page(){
+                return this.#page
+            }
+
+            nextPage(){
+                return this.#page++
+            }
+
+            close(){
+                this.#page = 1
+            }
+        }
+
+        class Librairy
+        {
+            #livre = []
+            addBook(livre){
+                this.#livre.push(livre)
+            }
+            addBooks(livres){
+                
+                for(let livre of livres){
+                    this.#livre.push(livre)
+                }
+                
+                // ou on peut faire ainsi 
+                lors de l'utilisation, mettre une en commentaire
+                
+                livres.forEach((livre) => this.addBook(livre))
+                
+            }
+
+            findBooksByLetter(lettre){
+                return this.#livre.filter(
+                    (data) => data.nom[0].toLowerCase() == lettre.toLowerCase()
+                    )
+            }
+        }
+
+        const b = new Book('La confiance en Dieu', 200)
+        console.log(b.page)
+        b.nextPage()
+        console.log(b.page)
+        b.close()
+        console.log(b.page)
+
+        const l = new Librairy()
+        l.addBook(b)
+        l.addBooks([
+            new Book('Ready', 200),
+            new Book('Oui-Oui', 100),
+            new Book('La paix', 150)
+        ])
+        console.log(l)
+        console.log(l.findBooksByLetter('r'))
+
+
+
+
+        // TP ou on va créer un classe pour les rectangles et les getter appropriés. Ensuite une autre
+        // classe Square qui va etendre de Rectangle
+        class Rectangle 
+        {
+            constructor(longueur, largeur){
+                this.longueur = longueur
+                this.largeur = largeur
+            }
+
+            get isValid() {
+                return this.longueur > 0 && this.largeur > 0
+            }
+            get perimeter() {
+                return (this.longueur*2 + this.largeur*2)
+            }
+
+            isBiggerThan(shape){
+                return this.perimeter > shape.perimeter
+            }
+            
+        }
+
+        class Square extends Rectangle
+        {
+            constructor(longueur){
+                super(longueur)
+            }
+            
+            get isValid(){
+                return this.longueur > 0
+            }
+
+            get perimeter() {
+                return this.longueur*this.longueur
+            }
+
+        }
+
+        const r = new Rectangle(10, 20)
+        console.log(r.perimeter)
+        console.log(r.isValid)
+
+        const c = new Square(10)
+        console.log(c.perimeter)
+        console.log(c.isValid)
+        console.log(c.isBiggerThan(r))
+
+        // Les bases 
+         class Student {
+            notes = []
+            constructor(nom, prenom) {
+                this.nom = nom
+                this.prenom = prenom
+            }
+            set note (data){
+                if (Array.isArray(data)){
+                    this.notes = data
+                }
+            }
+            get name() {
+                return (this.prenom+" "+this.nom)
+            }
+        }
+        const bane = new Student('BANE','Aboubacar')
+        bane.note = [10, 20]
+        console.log(bane.name)
+        */
+    </script>
 </head>
 <body>
     

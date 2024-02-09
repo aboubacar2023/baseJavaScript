@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilitaires en JS</title>
+    <script>
+        //Les methodes utiles sur les tableau en JS
+
+        // 1. La méthode at() prend un entier en argument et renvoie l'élément du tableau situé à cet indice. 
+        //Des valeurs entières positives ou négatives peuvent être utilisées en argument. Dans ce dernier cas, la recherche est effectuée depuis la fin du tableau.
+        
+
+        // 2. La méthode concat() est utilisée afin de fusionner deux ou plusieurs tableaux en les concaténant. Cette méthode ne modifie pas les tableaux existants,
+        // elle renvoie un nouveau tableau qui est le résultat de l'opération.
+
+        // 3. La méthode filter() crée et retourne un nouveau tableau contenant tous les éléments du tableau d'origine qui remplissent une condition déterminée par la fonction callback.
+
+        // 4. La méthode find() renvoie la première valeur d'un tableau qui satisfait la fonction de test fournie. Sinon, la méthode renvoie undefined.
+
+        // 5. La méthode findIndex() renvoie l'indice du premier élément d'un tableau qui satisfait une condition donnée par une fonction de test.
+
+        // 6. La méthode findLast() parcourt un tableau dans le sens inverse et renvoie le premier élément rencontré qui correspond au critère fourni par la fonction passée en argument.
+        // Si aucun élément ne correspond au critère de la fonction de test, ce sera, undefined qui sera renvoyé.
+
+        // 7. La méthode forEach() exécute une fonction donnée une fois pour chaque élément du tableau. Un peu comme avec le foreach en PHP.
+
+        // 8. La méthode includes() détermine si un tableau contient une valeur spécifique parmi ses éléments, renvoyant true ou false selon le cas.
+
+        // 9. La méthode indexOf() renvoie le premier indice pour lequel on trouve un élément donné dans un tableau. Si l'élément n'est pas présent dans le tableau, la méthode renvoie -1.
+
+        // 10. La méthode join() crée et renvoie une nouvelle chaîne de caractères en concaténant tous les éléments d'un tableau (ou d'un objet semblable à un tableau).
+
+        // 11. La méthode Map() crée un nouveau tableau avec les résultats de l'appel d'une fonction fournie sur chaque élément du tableau appelant.
+
+        // 12. La méthode pop() supprime le dernier élément d'un tableau et renvoie cet élément. Cette méthode modifie la longueur du tableau.
+
+        // 13. La méthode push() ajoute un ou plusieurs éléments à la fin d'un tableau et renvoie la nouvelle longueur du tableau.
+
+        // 14. La méthode reduce() applique une fonction qui est un « accumulateur » et qui traite chaque valeur d'une liste (de gauche à droite) afin de la réduire à une seule valeur.
+
+        // 15. La méthode reduceRight() applique une fonction qui est un « accumulateur » et qui traite chaque valeur d'une liste (de droite à gauche) afin de la réduire à une seule valeur.
+
+        // 16. La méthode reverse() inverse l'ordre des éléments d'un tableau — le premier devient le dernier et le dernier devient le premier.
+
+        // 17. La méthode shift() supprime le premier élément d'un tableau et renvoie cet élément. Cette méthode modifie la longueur du tableau.
+
+        // 18. La méthode slice() renvoie un objet tableau, contenant une copie superficielle (shallow copy) d'une portion du tableau d'origine,
+        // sans modifier le tableau d'origine. Le tableau d'origine ne sera pas modifié.
+
+        // 19. La méthode sort() trie les éléments d'un tableau, dans ce même tableau, et renvoie le tableau. Le tri s'effectue par défaut par ordre croissant.
+
+
+        // Les sucres Syntaxiques
+
+        // 1. Les fonctions fléchées, ça permet de simplifier la syntaxe des fonctions anonymes.
+        const add = (a, b) => a + b;
+        // ou
+        const add2 = (a, b) => {
+            return a + b;
+        }
+
+        // 2. Attributions conditionnelles de valeurs (ou ternaires d'une manière). C'est valables aussi pour les fonctions
+        const a = 5
+        const b = a || 10; // b vaut 5
+
+        const c = 5
+        const d = c && 10; // d vaut 10
+
+        // 3. Si la variable est null ou non definie, pour que ça ne renvoie pas une erreur lors de la recupération de la valeur
+        const person = {
+            // name: 'John',
+            age: 20,
+        }
+
+        console.log(person?.name); // undefined
+
+        // 4. Les opérateurs de décomposition (spread operator) permettent de décomposer un objet ou un tableau en plusieurs éléments.
+        const arr = [1, 2, 3];
+        const arr2 = [...arr, 4, 5, 6]; // [1, 2, 3, 4, 5, 6]
+        console.log(arr) // [1, 2, 3] la valeur de arr ne change pas contrairement si on utilise la méthode push()
+
+        // 5. les valeurs par défaut dans les fonctions lors de la reception des paramètres
+        function sayHello(name = 'John') {
+            console.log("Hello", name); // Hello John si aucun paramètre n'est passé lors de l'appel de la fonction
+        }
+
+        // 6. les conditions ternaires
+        const age = 20;
+        const isAdult = age >= 18 ? 'Adult' : 'Not adult'; // si l'age est supérieur ou égal à 18, isAdult vaut 'Adult' sinon 'Not adult'
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
