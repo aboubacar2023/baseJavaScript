@@ -89,8 +89,25 @@
         const age = 20;
         const isAdult = age >= 18 ? 'Adult' : 'Not adult'; // si l'age est supérieur ou égal à 18, isAdult vaut 'Adult' sinon 'Not adult'
 
+    // L'asyncrone en JS
 
+    // 1. La methode setTimeout() permet de définir une fonction qui sera exécutée après un certain délai (en millisecondes). La partilité de cette méthode est qu'elle est asynchrone.
+    // C'est à dire que le code qui suit la méthode setTimeout() sera exécuté avant que la fonction passée en argument à setTimeout() ne soit exécutée.
+        console.log('Hello');
+        setTimeout(() => {
+            console.log('World');
+        }, 2000);
+        console.log('Bye'); // Ici Bye sera affiché avant World, car World sera affiché après 2 secondes.
 
+    // 2. La méthode setInterval() permet d'exécuter une fonction donnée à intervalles réguliers, en millisecondes. Elle continue d'exécuter la fonction jusqu'à ce que clearInterval() soit appelée, ou que la fenêtre soit fermée.
+        let i = 0;
+        const interval = setInterval(() => {
+            console.log(i);
+            i++;
+            if (i === 5) {
+                clearInterval(interval);
+            }
+        }, 1000);
     </script>
 </head>
 <body>
