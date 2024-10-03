@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evenement</title>
+    <script src="./app.js" type="module" defer></script>
+    <style>
+        div {
+            height: 100px;
+        }
+        .spoiler {
+            background-color: black;
+            color: black;
+        }
+        .spoiler::selection {
+            color: black;
+        }
+        span {
+            transition: .3s;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button>Bonjour</button>
+    </div>
+    <form action="">
+        <input type="text" name="name">
+        <button>Envoyer</button>
+    </form>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate dolorum quos doloremque, veritatis neque numquam quidem nesciunt quas esse ducimus aliquam vitae deserunt, libero impedit fuga. Corrupti eum nam accusantium?
+        <span class="spoiler">Veritatis autem a nostrum quos</span> voluptatem nihil quidem excepturi minima illo ex, nisi perspiciatis sapiente libero eos, hic possimus laboriosam. Ad rerum adipisci sapiente hic! Unde nam voluptatum accusantium consequatur.
+        Delectus asperiores distinctio suscipit officiis labore natus <span class="spoiler">obcaecati tempore alias iure sit nobis nisi</span> beatae possimus a totam enim, doloremque dolore iusto? Eveniet blanditiis, necessitatibus perspiciatis cupiditate nobis at eligendi.
+    </p>
+
+</body>
+</html>
